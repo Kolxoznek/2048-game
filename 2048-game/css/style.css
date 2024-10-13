@@ -7,15 +7,58 @@
 
 body {
     background-color: #333;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid-template-columns: 20vmin auto 20vmin;
     height: 100vh;
 }
 
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+    padding: 0 1vmin;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn {
+
+    border-radius: 1vmin;
+    border: none;
+    padding: 1vmin;
+    font-size: 3vmin;
+    background-color: #3366cc;
+    color: #fff;
+    cursor: pointer;
+    -webkit-text-stroke: 0px;
+    text-stroke: 0px;
+}
+
+.score {
+    font-size: 3vmin;
+    color: #3366cc;
+}
+
+.leaders__title {
+    margin-bottom: 0.5vmin;
+}
+
+.game-rules__title {
+    text-align: center;
+    margin-bottom: 0.5vmin;
+}
+
+.game-rules__text {
+    text-align: start;
+}
+
 #game-board {
-    --cell-size: 20vmin;
-    --cell-gap: 2vmin;
+    --cell-size: 15vmin;
+    --cell-gap: 1vmin;
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, var(--cell-size));
@@ -38,13 +81,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vmin;
-    height: 20vmin;
+    width: 15vmin;
+    height: 15vmin;
     border-radius: 1vmin;
-    font-size: 7.5vmin;
+    font-size: 5vmin;
     font-weight: bold;
-    background-color: #fff;
-    color: #000;
+    background-color: hsl(220, 60%, var(--bg-lightness));
+    color: hsl(25, 25%, var(--text-lightness));
     transition: all 0.1s;
     animation: show 0.2s;
 }
@@ -58,4 +101,45 @@ body {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #000;
+    text-stroke: 2px #000;
+    z-index: 1;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmin;
+}
+  
+.footer__author {
+color: inherit;
+}
+
+.footer__link {
+font-size: 0;
+}
+
+.footer__link svg {
+width: 6vmin;
+height: 6vmin;
 }
